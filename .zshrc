@@ -62,11 +62,6 @@ export PATH="/usr/local/heroku/bin:$PATH"
 
 export PATH="$HOME/.cask/bin:$PATH"
 
-
-npm_dir=${NVM_PATH}_modules
-export NODE_PATH=$npm_dir
-
-
 # set current directory name to iterm2 tab name
 function chpwd() { echo -ne "\033]0;$(pwd | rev | awk -F \/ '{print ""$1"/"}'| rev)\007"}
 
@@ -80,9 +75,9 @@ if [ -d $ZSHHOME -a -r $ZSHHOME -a -x $ZSHHOME ]; then
 fi
 
 export PATH=/usr/local/bin:/usr/local/sbin:$PATH
-eval "$(rbenv init -)"
-export PATH="$HOME/.rbenv/shims:$PATH"
+eval "$(anyenv init -)"
 
+export PATH=$HOME/.anyenv/envs/nodenv/versions/*/bin:$PATH
 export GOPATH=$HOME/workspace
 export PATH=$PATH:$GOPATH/bin
 
