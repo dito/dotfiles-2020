@@ -137,6 +137,7 @@ fabric.properties
 # Android studio 3.1+ serialized cache file
 .idea/caches/build_file_checksums.ser
 
+.idea
 
 ### https://raw.github.com/github/gitignore/599646e9d0a26283d67715dead8f26e0eb2df753/Global/Emacs.gitignore
 
