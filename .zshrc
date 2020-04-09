@@ -94,3 +94,5 @@ zle -N peco-src
 # direnv
 export EDITOR=vim
 eval "$(direnv hook zsh)"
+
+[ -f ~/.zshrc.local ] && source ~/.zshrc.local
