@@ -90,3 +90,7 @@ function peco-src() {
     fi
     zle -R -c }
 zle -N peco-src
+
+# direnv
+export EDITOR=vim
+eval "$(direnv hook zsh)"
