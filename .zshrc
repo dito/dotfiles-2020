@@ -77,7 +77,6 @@ fi
 export PATH=/usr/local/bin:/usr/local/sbin:$PATH
 eval "$(anyenv init -)"
 
-export PATH=$HOME/.anyenv/envs/nodenv/versions/*/bin:$PATH
 export GOPATH=$HOME/workspace
 export PATH=$PATH:$GOPATH/bin
 
@@ -95,4 +94,10 @@ zle -N peco-src
 export EDITOR=vim
 eval "$(direnv hook zsh)"
 
+# nvm
+export NVM_DIR="$HOME/.nvm"
+[ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
+[ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] && . "/usr/local/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
+
+# for local
 [ -f ~/.zshrc.local ] && source ~/.zshrc.local
