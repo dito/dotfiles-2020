@@ -77,8 +77,10 @@ fi
 export PATH=/usr/local/bin:/usr/local/sbin:$PATH
 eval "$(anyenv init -)"
 
-export GOPATH=$HOME/workspace
-export PATH=$PATH:$GOPATH/bin
+export GOENV_ROOT=$HOME/.goenv
+export PATH="$GOENV_ROOT/bin:$PATH"
+eval "$(goenv init -)"
+export PATH="$GOPATH/bin:$PATH"
 
 function peco-src () {
     local repo=$(ghq list | peco --query "$LBUFFER" --initial-filter=Fuzzy)
