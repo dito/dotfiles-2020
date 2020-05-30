@@ -80,15 +80,17 @@ eval "$(anyenv init -)"
 export GOPATH=$HOME/workspace
 export PATH=$PATH:$GOPATH/bin
 
-bindkey '^]' peco-src
-function peco-src() {
-    local src=$(ghq list --full-path | peco --query "$LBUFFER")
-    if [ -n "$src" ]; then
-        BUFFER="cd $src"
+function peco-src () {
+    local repo=$(ghq list | peco --query "$LBUFFER" --initial-filter=Fuzzy)
+    if [ -n "$repo" ]; then
+        repo=$(ghq list --full-path --exact $repo)
+        BUFFER="cd ${repo}"
         zle accept-line
     fi
-    zle -R -c }
+    zle clear-screen
+}
 zle -N peco-src
+bindkey '^]' peco-src
 
 # direnv
 export EDITOR=vim
