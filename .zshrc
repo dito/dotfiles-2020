@@ -30,6 +30,7 @@ alias gl='git l'
 
 alias vim=nvim
 alias bx='bundle exec'
+alias sed='gsed'
 
 function agp() {
     ag $1 | peco
